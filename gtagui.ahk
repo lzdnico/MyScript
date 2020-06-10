@@ -1,4 +1,7 @@
-﻿~Space & c:: 
+﻿;GUI版GTA宏，空格+C弹出选择菜单。
+;Nico主要维护这个
+
+~Space & c:: 
     Gui, Destroy
     Gui +AlwaysOnTop
     Gui, Add, Text,, ================
