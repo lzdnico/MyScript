@@ -1,5 +1,5 @@
 ﻿;GUI版GTA宏，空格+C弹出选择菜单。
-;Nico主要维护这个
+;Nico主要维护这个。正在使用的也是这个
 
 ~Space & c:: 
     Gui, Destroy

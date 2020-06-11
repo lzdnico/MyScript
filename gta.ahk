@@ -1,5 +1,7 @@
 ﻿;快捷键版GTA宏。 难点在于记住多个快捷键。但是速度更快。
-;记不住的可以看gtagui.ahk可视化操作
+;记不住的可以看gtagui.ahk可视化操作。
+;此版本适合对速度又要求，宏比较少的用户。
+;有些快捷键有问题的以gtagui.ahk对应的操作为准
 
 
 ;刷屏清屏
@@ -17,7 +19,7 @@ Return
 ;CEO 吃药c
 ~Space & c::             ;空格+c,触发CE0相关功能
     Input, key, L1 T0.5 
-    if (key == "1")   ;CEO吃药           ；再按下1，吃药
+    if (key == "1")   ;CEO吃药           ；再按下1，吃药   。即先同时按下空格+C，再按下数字键1
         Send, {M}
         Send, {Enter}
         Send, {Down}
