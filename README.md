@@ -8,7 +8,7 @@
 # 脚本说明
   - gtagui.ahk<br/>
   用于GTA5_Online宏，免去繁琐的键盘操作。<br/>
-  ![image](https://github.com/lzdnico/MyAHKScript/blob/tree/ahk/images/gta5.png) <br/>
+  ![image](https://github.com/lzdnico/MyAHKScript/blob/ahk/images/gta5.png) <br/>
 
 # 其他
    - 关注频道：https://t.me/niconewbeeeapi
