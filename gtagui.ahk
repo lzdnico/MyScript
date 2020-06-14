@@ -1,11 +1,11 @@
 ﻿;GUI版GTA宏，空格+C弹出选择菜单。
 ;Nico主要维护这个。正在使用的也是这个
-
 ~Space & c:: 
     Gui, Destroy
     Gui +AlwaysOnTop
     Gui, Add, Text,, ================
     Gui Add, Button, gS8 w100, 开启CEO
+    Gui Add, Button, ghide w100, 开关差事
     Gui Add, Button, gbullet w100, CEO子弹
     Gui Add, Button, gS4 w100, CEO嗑药
     Gui Add, Button, gS5 w100, CEO幽灵
@@ -24,18 +24,39 @@
 Return
 
 test:
-send {alt down}{tab}{alt up}
+    WinActivate, ahk_exe GTA5.exe
     Sleep 10
     Send, {M}
     Sleep 100
-    Send, {M}
+    Send, {M}    
     Sleep 10
-send {alt down}{tab}{alt up}
-send {alt down}{F4}{alt up}
+    WinActivate, ahk_exe gtagui.exe                ;生成的exe一定要是这个名称
+    WinClose
+Return
+
+hide:
+    WinActivate, ahk_exe GTA5.exe
+    Sleep 10
+    Send, {M}
+    Loop, 8
+    {
+        Send, {Up}
+        Sleep 10
+    }
+    Sleep 10
+    Send, {Enter}    
+    Sleep 10
+    Send, {Enter} 
+    Sleep 10
+    Send, {Right} 
+    Sleep 10
+    Send, {M} 
+    WinActivate, ahk_exe gtagui.exe                ;生成的exe一定要是这个名称
+    WinClose
 Return
 
 nhelmet:
-send {alt down}{tab}{alt up}
+    WinActivate, ahk_exe GTA5.exe
     Sleep 10
     Send, {M}
     Sleep 10
@@ -61,14 +82,12 @@ send {alt down}{tab}{alt up}
     Sleep 10
     Send, {Space}
     Sleep 10
-    Send, {M}
-    Sleep 10
-send {alt down}{tab}{alt up}
-send {alt down}{F4}{alt up}
+    WinActivate, ahk_exe gtagui.exe                ;生成的exe一定要是这个名称
+    WinClose
 Return
 
 nbullet:
-send {alt down}{tab}{alt up}
+    WinActivate, ahk_exe GTA5.exe
     Sleep 10
     Send, {M}
     Sleep 10
@@ -104,14 +123,12 @@ send {alt down}{tab}{alt up}
         Sleep 100
     }
     Sleep 10
-    Send, {M}
-    Sleep 10
-send {alt down}{tab}{alt up}
-send {alt down}{F4}{alt up}
+    WinActivate, ahk_exe gtagui.exe                ;生成的exe一定要是这个名称
+    WinClose
 Return
 
 helmet:
-send {alt down}{tab}{alt up}
+    WinActivate, ahk_exe GTA5.exe
     Sleep 10
     Send, {M}
     Sleep 10
@@ -139,14 +156,12 @@ send {alt down}{tab}{alt up}
     Sleep 10
     Send, {Space}
     Sleep 10
-    Send, {M}
-    Sleep 10
-send {alt down}{tab}{alt up}
-send {alt down}{F4}{alt up}
+    WinActivate, ahk_exe gtagui.exe                ;生成的exe一定要是这个名称
+    WinClose
 Return
 
 bullet:
-send {alt down}{tab}{alt up}
+    WinActivate, ahk_exe GTA5.exe
     Sleep 10
     Send, {M}
     Sleep 10
@@ -184,14 +199,12 @@ send {alt down}{tab}{alt up}
         Sleep 100
     }
     Sleep 10
-    Send, {M}
-    Sleep 10
-send {alt down}{tab}{alt up}
-send {alt down}{F4}{alt up}
+    WinActivate, ahk_exe gtagui.exe                ;生成的exe一定要是这个名称
+    WinClose
 Return
 
 S1:
-send {alt down}{tab}{alt up}
+    WinActivate, ahk_exe GTA5.exe
     Loop, 6
     {
         Sleep 10
@@ -203,12 +216,12 @@ send {alt down}{tab}{alt up}
         Send, {Enter}
     }
     Sleep 10
-send {alt down}{tab}{alt up}
-send {alt down}{F4}{alt up}
+    WinActivate, ahk_exe gtagui.exe                ;生成的exe一定要是这个名称
+    WinClose
 Return
 
 S2:
-send {alt down}{tab}{alt up}
+    WinActivate, ahk_exe GTA5.exe
     Sleep 10
     Send, {M}
     Sleep 10
@@ -224,12 +237,12 @@ send {alt down}{tab}{alt up}
     Sleep 10
     Send, {Enter}
     Sleep 10
-send {alt down}{tab}{alt up}
-send {alt down}{F4}{alt up}
+    WinActivate, ahk_exe gtagui.exe                ;生成的exe一定要是这个名称
+    WinClose
 Return
 
 S3:
-send {alt down}{tab}{alt up}
+    WinActivate, ahk_exe GTA5.exe
     Sleep 10
     Send, {M}
     Sleep 10
@@ -251,12 +264,12 @@ send {alt down}{tab}{alt up}
     Sleep 10
     Send, {Down}
     Sleep 10
-send {alt down}{tab}{alt up}
-send {alt down}{F4}{alt up}
+    WinActivate, ahk_exe gtagui.exe                ;生成的exe一定要是这个名称
+    WinClose
 Return
 
 S4:
-send {alt down}{tab}{alt up}
+    WinActivate, ahk_exe GTA5.exe
         Sleep 10
         Send, {M}
         Sleep 10
@@ -276,12 +289,12 @@ send {alt down}{tab}{alt up}
         Sleep 10
         Send, {Enter}
         Sleep 10
-send {alt down}{tab}{alt up}
-send {alt down}{F4}{alt up}
+    WinActivate, ahk_exe gtagui.exe                ;生成的exe一定要是这个名称
+    WinClose
 Return
  
 S5:
-send {alt down}{tab}{alt up}
+    WinActivate, ahk_exe GTA5.exe
         Sleep 10
         Send, {M}
         Sleep 10
@@ -307,12 +320,12 @@ send {alt down}{tab}{alt up}
         Sleep 10
         Send, {Enter}
         Sleep 10
-send {alt down}{tab}{alt up}
-send {alt down}{F4}{alt up}
+    WinActivate, ahk_exe gtagui.exe                ;生成的exe一定要是这个名称
+    WinClose
 Return
 
 S6:
-send {alt down}{tab}{alt up}
+    WinActivate, ahk_exe GTA5.exe
         Sleep 10
         Send, {M}
         Sleep 10
@@ -340,12 +353,12 @@ send {alt down}{tab}{alt up}
         Sleep 10
         Send, {Enter}
         Sleep 10
-send {alt down}{tab}{alt up}
-send {alt down}{F4}{alt up}
+    WinActivate, ahk_exe gtagui.exe                ;生成的exe一定要是这个名称
+    WinClose
 Return
 
 S7:
-send {alt down}{tab}{alt up}
+    WinActivate, ahk_exe GTA5.exe
         Sleep 10
         Send, {M}
         Sleep 10
@@ -373,12 +386,12 @@ send {alt down}{tab}{alt up}
         Sleep 10
         Send, {Enter}
         Sleep 10
-send {alt down}{tab}{alt up}
-send {alt down}{F4}{alt up}
+    WinActivate, ahk_exe gtagui.exe                ;生成的exe一定要是这个名称
+    WinClose
 Return
 
 S8:
-send {alt down}{tab}{alt up}
+    WinActivate, ahk_exe GTA5.exe
         Sleep 10
         Send, {M}
         Loop, 6
@@ -391,12 +404,12 @@ send {alt down}{tab}{alt up}
         Sleep 10
         Send, {Enter}
         Sleep 10
-send {alt down}{tab}{alt up}
-send {alt down}{F4}{alt up}
+    WinActivate, ahk_exe gtagui.exe                ;生成的exe一定要是这个名称
+    WinClose
 Return
 
 S9:
-send {alt down}{tab}{alt up}
+    WinActivate, ahk_exe GTA5.exe
         Sleep 10
         Send, {M}
         Sleep 10
@@ -406,7 +419,7 @@ send {alt down}{tab}{alt up}
         Sleep 10
         Send, {Enter}
         Sleep 10
-send {alt down}{tab}{alt up}
-send {alt down}{F4}{alt up}
+    WinActivate, ahk_exe gtagui.exe                ;生成的exe一定要是这个名称
+    WinClose
 Return
  
