@@ -25,10 +25,16 @@
     Gui Add, Button, glester w100, 莱斯特
     Gui Add, Button, gbojia w100, 珀加索斯
     Gui Add, Button, gbaoxian w100, 共荣保险
-    Gui Add, Button, gmeili w100, 梅里危瑟
-    Gui Add, Button, gtest w100, 测试专用
+    Gui Add, Button, gmeili w100, 梅利危瑟
+    Gui Add, Button, ggithub w100, 项目地址
     Gui, Show, AutoSize Center
 Return
+
+github:
+    Run, https://github.com/lzdnico/MyAHKScript
+    WinActivate, ahk_exe gtagui.exe                ;生成的exe一定要是这个名称
+    WinClose
+    Return
 
 kill:
     WinActivate, ahk_exe GTA5.exe
