@@ -36,26 +36,20 @@ github:
     WinClose
     Return
 
-kill:
+kill:                                                ;自杀
     WinActivate, ahk_exe GTA5.exe
     Send,{m down}
     Sleep 10
     Send,{m up}
-
     Sleep 200
-
     Send,{Up down}
     Sleep 10
     Send,{Up up}
-
     Sleep 20
-
     Send,{Up down}
     Sleep 10
     Send,{Up up}
-
     Sleep 20
-
     Send,{Enter down}
     Sleep 10
     Send,{Enter up}
@@ -63,7 +57,7 @@ kill:
     WinClose
 Return
 
-baoxian:
+baoxian:                                          ;共荣保险
     WinActivate, ahk_exe GTA5.exe
     Send,{Up down}
     Sleep 10
@@ -103,7 +97,7 @@ baoxian:
     WinClose
 Return
 
-meili:
+meili:                                             ;梅利威
     WinActivate, ahk_exe GTA5.exe
     Send,{Up down}
     Sleep 10
@@ -139,7 +133,7 @@ meili:
     WinClose
 Return
 
-tool:
+tool:                                              ;技工
     WinActivate, ahk_exe GTA5.exe
     Send,{Up down}
     Sleep 10
@@ -171,7 +165,7 @@ tool:
     WinClose
 Return
 
-bojia:
+bojia:                                            ;军用载具
     WinActivate, ahk_exe GTA5.exe
     Send,{Up down}
     Sleep 10
@@ -203,7 +197,7 @@ bojia:
     WinClose
 Return
 
-lester:
+lester:                                         ;莱斯特
     WinActivate, ahk_exe GTA5.exe
     Send,{Up down}
     Sleep 10
@@ -254,7 +248,7 @@ test:
     WinClose
 Return
 
-hide:
+hide:                                              ;开关差事
     WinActivate, ahk_exe GTA5.exe
     Sleep 10
     Send, {M}
@@ -275,7 +269,7 @@ hide:
     WinClose
 Return
 
-nhelmet:
+nhelmet:                                           ;普通热感                 
     WinActivate, ahk_exe GTA5.exe
     Sleep 10
     Send, {M}
@@ -308,7 +302,7 @@ nhelmet:
     WinClose
 Return
 
-nbullet:
+nbullet:                                        ;普通子弹
     WinActivate, ahk_exe GTA5.exe
     Sleep 10
     Send, {M}
@@ -349,7 +343,7 @@ nbullet:
     WinClose
 Return
 
-helmet:
+helmet:                                    ;CEO热感
     WinActivate, ahk_exe GTA5.exe
     Sleep 10
     Send, {M}
@@ -384,7 +378,7 @@ helmet:
     WinClose
 Return
 
-bullet:
+bullet:                                          ;CEO子弹
     WinActivate, ahk_exe GTA5.exe
     Sleep 10
     Send, {M}
@@ -427,15 +421,15 @@ bullet:
     WinClose
 Return
 
-S1:
+S1:                                                  ;刷屏
     WinActivate, ahk_exe GTA5.exe
     Loop, 6
     {
         Sleep 10
         Send, {T}
         Sleep 10
-        Send, {Space}
-        Sleep, 500
+        Send, {Space}                               
+        Sleep, 500                                   ;定义刷屏间隔
         Sleep 10
         Send, {Enter}
     }
@@ -444,7 +438,7 @@ S1:
     WinClose
 Return
 
-S2:
+S2:                                                ;普通零食
     WinActivate, ahk_exe GTA5.exe
     Sleep 10
     Send, {M}
@@ -465,7 +459,7 @@ S2:
     WinClose
 Return
 
-S3:
+S3:                                                 ;普通盔甲
     WinActivate, ahk_exe GTA5.exe
     Sleep 10
     Send, {M}
@@ -492,7 +486,7 @@ S3:
     WinClose
 Return
 
-S4:
+S4:                                               ;CEO嗑药
     WinActivate, ahk_exe GTA5.exe
         Sleep 10
         Send, {M}
@@ -517,7 +511,7 @@ S4:
     WinClose
 Return
  
-S5:
+S5:                                               ;CEO幽灵
     WinActivate, ahk_exe GTA5.exe
         Sleep 10
         Send, {M}
@@ -548,7 +542,7 @@ S5:
     WinClose
 Return
 
-S6:
+S6:                                             ;CEO通缉
     WinActivate, ahk_exe GTA5.exe
         Sleep 10
         Send, {M}
@@ -581,7 +575,7 @@ S6:
     WinClose
 Return
 
-S7:
+S7:                                                ;CEO小鸟载具
     WinActivate, ahk_exe GTA5.exe
         Sleep 10
         Send, {M}
@@ -614,7 +608,7 @@ S7:
     WinClose
 Return
 
-S8:
+S8:                                                ;开启CEO
     WinActivate, ahk_exe GTA5.exe
         Sleep 10
         Send, {M}
@@ -632,7 +626,7 @@ S8:
     WinClose
 Return
 
-S9:
+S9:                                                ;关闭CEO
     WinActivate, ahk_exe GTA5.exe
         Sleep 10
         Send, {M}
