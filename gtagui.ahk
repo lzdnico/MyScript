@@ -5,36 +5,79 @@
     Gui +AlwaysOnTop
     Gui, Add, Text,, ================
     Gui Add, Button, gS8 w100, 开启CEO
+    Gui Add, Button, gceosnack w100, CEO零食
+    Gui Add, Button, gceoarmor w100, CEO盔甲
     Gui Add, Button, gbullet w100, CEO子弹
-    Gui Add, Button, gS4 w100, CEO嗑药
-    Gui Add, Button, gS5 w100, CEO幽灵
-    Gui Add, Button, gS6 w100, CEO通缉
-    Gui Add, Button, gS7 w100, CEO载具
     Gui Add, Button, ghelmet w100, CEO热感
+    Gui Add, Button, gceoassets w100, CEO资产
     gui, add, Text, ys ,================
     Gui Add, Button, gS9 w100, 关闭CEO
-    Gui Add, Button, ghide w100, 开关差事
     Gui Add, Button, gS2 w100, 普通零食
     Gui Add, Button, gS3 w100, 普通盔甲
     Gui Add, Button, gnbullet w100, 普通子弹
     Gui Add, Button, gnhelmet w100, 普通热感
-    Gui Add, Button, gS1 w100, 清理刷屏
+    Gui Add, Button, gassets w100, 普通资产
     gui, add, Text, ys ,================
-    Gui Add, Button, gkill w100, 自杀
+    Gui Add, Button, gS4 w100, CEO嗑药
+    Gui Add, Button, gS5 w100, CEO幽灵
+    Gui Add, Button, gS6 w100, CEO通缉
+    Gui Add, Button, gS7 w100, CEO载具
+    gui, add, Text, ys ,================
     Gui Add, Button, gtool w100, 技工
     Gui Add, Button, glester w100, 莱斯特
     Gui Add, Button, gbojia w100, 珀加索斯
     Gui Add, Button, gbaoxian w100, 共荣保险
     Gui Add, Button, gmeili w100, 梅利危瑟
+    gui, add, Text, ys ,================
+    Gui Add, Button, gkill w100, 自杀
+    Gui Add, Button, ghide w100, 开关差事
+    Gui Add, Button, gS1 w100, 清理刷屏
     Gui Add, Button, ggithub w100, 项目地址
     Gui, Show, AutoSize Center
 Return
+
+
 
 github:
     Run, https://github.com/lzdnico/MyAHKScript
     WinActivate, ahk_exe gtagui.exe                ;生成的exe一定要是这个名称
     WinClose
     Return
+
+assets:
+    WinActivate, ahk_exe GTA5.exe
+    Send,{m down}
+    Sleep 10
+    Send,{m up}
+    Sleep 200
+    Loop, 5
+    {
+        Send, {Down}
+        Sleep 10
+    }
+    Send, {Enter}
+    Sleep 10
+    WinActivate, ahk_exe gtagui.exe                ;生成的exe一定要是这个名称
+    WinClose
+Return
+
+ceoassets:
+    WinActivate, ahk_exe GTA5.exe
+    Send,{m down}
+    Sleep 10
+    Send,{m up}
+    Sleep 200
+    Loop, 6
+    {
+        Send, {Down}
+        Sleep 10
+    }
+    Send, {Enter}
+    Sleep 10
+    WinActivate, ahk_exe gtagui.exe                ;生成的exe一定要是这个名称
+    WinClose
+Return
+
 
 kill:                                                ;自杀
     WinActivate, ahk_exe GTA5.exe
@@ -308,7 +351,7 @@ nbullet:                                        ;普通子弹
     Send, {M}
     Sleep 10
     Send, {Down}
-    Sleep 10
+    Sleep 50
     Send, {Down}
     Sleep 10
     Send, {Enter}
@@ -338,6 +381,8 @@ nbullet:                                        ;普通子弹
         Send, {Enter}
         Sleep 100
     }
+    Sleep 10
+    Send, {M}
     Sleep 10
     WinActivate, ahk_exe gtagui.exe                ;生成的exe一定要是这个名称
     WinClose
@@ -384,7 +429,7 @@ bullet:                                          ;CEO子弹
     Send, {M}
     Sleep 10
     Send, {Down}
-    Sleep 10
+    Sleep 50
     Send, {Down}
     Sleep 10
     Send, {Down}
@@ -417,19 +462,21 @@ bullet:                                          ;CEO子弹
         Sleep 100
     }
     Sleep 10
+    Send, {M}
+    Sleep 10
     WinActivate, ahk_exe gtagui.exe                ;生成的exe一定要是这个名称
     WinClose
 Return
 
 S1:                                                  ;刷屏
     WinActivate, ahk_exe GTA5.exe
-    Loop, 6
+    Loop, 10
     {
         Sleep 10
         Send, {T}
         Sleep 10
         Send, {Space}                               
-        Sleep, 500                                   ;定义刷屏间隔
+        Sleep, 100                                   ;定义刷屏间隔
         Sleep 10
         Send, {Enter}
     }
@@ -455,11 +502,13 @@ S2:                                                ;普通零食
     Sleep 10
     Send, {Enter}
     Sleep 10
+    Send, {Enter}
+    Sleep 10
     WinActivate, ahk_exe gtagui.exe                ;生成的exe一定要是这个名称
     WinClose
 Return
 
-S3:                                                 ;普通盔甲
+ceosnack:                                                ;CEO零食
     WinActivate, ahk_exe GTA5.exe
     Sleep 10
     Send, {M}
@@ -468,8 +517,6 @@ S3:                                                 ;普通盔甲
     Sleep 10
     Send, {Down}
     Sleep 10
-    Send, {Enter}
-    Sleep 10
     Send, {Down}
     Sleep 10
     Send, {Enter}
@@ -478,13 +525,75 @@ S3:                                                 ;普通盔甲
     Sleep 10
     Send, {Down}
     Sleep 10
-    Send, {Down}
+    Send, {Enter}
     Sleep 10
-    Send, {Down}
+    Send, {Enter}
     Sleep 10
     WinActivate, ahk_exe gtagui.exe                ;生成的exe一定要是这个名称
     WinClose
 Return
+
+
+S3:                                                 ;普通盔甲
+    WinActivate, ahk_exe GTA5.exe
+    Sleep 10
+    Send, {M}
+    Sleep 10
+    Send, {Down}
+    Sleep 40
+    Send, {Down}
+    Sleep 10
+    Send, {Enter}
+    Sleep 10
+    Send, {Down}
+    Sleep 10
+    Send, {Enter}
+    Sleep 10
+    Send, {Down}
+    Sleep 10
+    Send, {Down}
+    Sleep 10
+    Send, {Down}
+    Sleep 10
+    Send, {Down}
+    Sleep 10
+    Send, {Enter}
+    Sleep 10
+    WinActivate, ahk_exe gtagui.exe                ;生成的exe一定要是这个名称
+    WinClose
+Return
+
+ceoarmor:                                                 ;CEO盔甲
+    WinActivate, ahk_exe GTA5.exe
+    Sleep 10
+    Send, {M}
+    Sleep 10
+    Send, {Down}
+    Sleep 40
+    Send, {Down}
+    Sleep 10
+    Send, {Down}
+    Sleep 10
+    Send, {Enter}
+    Sleep 10
+    Send, {Down}
+    Sleep 10
+    Send, {Enter}
+    Sleep 10
+    Send, {Down}
+    Sleep 10
+    Send, {Down}
+    Sleep 10
+    Send, {Down}
+    Sleep 10
+    Send, {Down}
+    Sleep 10
+    Send, {Enter}
+    Sleep 10
+    WinActivate, ahk_exe gtagui.exe                ;生成的exe一定要是这个名称
+    WinClose
+Return
+
 
 S4:                                               ;CEO嗑药
     WinActivate, ahk_exe GTA5.exe
