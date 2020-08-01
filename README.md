@@ -16,9 +16,6 @@
   5. 管理员模式运行生成的exe程序就可以使用了！<br/>
   ![image](https://github.com/lzdnico/MyAHKScript/blob/ahk/images/gta5.png) <br/>
 
-# 其他
-   - 关注频道：https://t.me/niconewbeeeapi
-   - 有用的话，欢迎TG打赏: https://t.me/niconewbeeeapi/134
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
