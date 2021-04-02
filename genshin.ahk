@@ -1,4 +1,10 @@
 ﻿;原神音乐脚本，需要用管理员模式运行
+;部分脚本来源：https://space.bilibili.com/12586633
+;anser='mysend_test("'
+;for i in "F F F D D D S S S G S D ":
+;    anser+=i+','
+;anser+='","350")'
+;print(anser)
 #Persistent 
 Goto,页面
 
