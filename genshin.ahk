@@ -18,6 +18,7 @@ Gui Add, Button, g卡农 w100, 卡农
 Gui Add, Button, g无垠之白 w100, 无垠之白
 Gui Add, Button, g葫芦娃 w100, 葫芦娃
 Gui Add, Button, g南山南 w100, 南山南
+Gui Add, Button, g雨天 w100, 雨天
 gui, add, Text, ys ,================
 Gui Add, Button, ggithub  w100, 项目地址
 Gui, Show, AutoSize Center
@@ -27,6 +28,16 @@ Return
 github:
     Run, https://github.com/lzdnico/MyAHKScript
     Return
+
+雨天:
+    WinActivate, ahk_exe YuanShen.exe
+    ;WinActivate, ahk_exe notepad.exe
+    Sleep 1000  
+    mysend_test("q,q,w,e,q,w, ,e,q,w, ,e,q,w, ,","350") ;在等你
+    mysend_test("q,q,w,e,q,w, ,q,t, ,t,r,e,w,q, ,","350") ;委屈
+    mysend_test("t,t, ,q,q, ,t,t, ,q,q,r,e,w,q,w,w","350") ;委屈
+    TrayTip % Format("📢通知📢"),弹奏南山南结束
+return
 
 无垠之白:
     keymusic:=[]
