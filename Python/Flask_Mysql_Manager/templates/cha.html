@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="cn-zh">
+<head>
+    <meta charset="UTF-8">
+    <title>更改操作</title>
+</head>
+<body>
+<center>
+    <h1>更改需要更改的信息</h1>
+    <form action="/chas" method="post">
+        <table>
+            {% for i in userlist %}
+            <tr>
+                <td>学号:<input type="text" name="id" readonly="readonly" value="{{ i.id }}"><br></td>
+            </tr>
+            <tr>
+                <td>姓名:<input type="text" name="name" value="{{ i.name }}"><br></td>
+            </tr>
+            <tr>
+                <td>班级:<input type="text" name="age" value="{{ i.age }}"><br></td>
+            </tr>
+            <tr>
+                <td>性别:<input type="text" name="sex" value="{{ i.sex }}"><br></td>
+            </tr>
+            <tr>
+                <td>语文:<input type="text" name="banji" value="{{ i.class }}"><br></td>
+            </tr>
+                <tr>
+                <td>数学:<input type="text" name="math" value="{{ i.math }}"><br></td>
+            </tr>
+                <tr>
+                <td>外语:<input type="text" name="english" value="{{ i.english }}"><br></td>
+            </tr>
+                <tr>
+                <td>综合:<input type="text" name="comprehensive" value="{{ i.comprehensive }}"><br></td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="2" align="center"><input type="submit" ,value="确定"></td>
+            </tr>
+        </table>
+    </form>
+</center>
+</body>
+</html>

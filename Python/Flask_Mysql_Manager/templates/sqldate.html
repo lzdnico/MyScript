@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="cn-zh">
+<head>
+    <meta charset="UTF-8">
+    <title>数据列表</title>
+    <style type="text/css">
+        .one{
+            width: auto;
+            height: 120px;
+            text-align: center;
+        }
+        body{
+            background-image: url("/static/img/204.jpg");
+        }
+
+    </style>
+</head>
+
+<body>
+    <center>
+    <div class="one">
+        <h1>成绩管理系统</h1>
+        <a href="/add/">添加学生信息</a>
+    </div>
+    <hr>
+
+    <table border="1px" width="500px">
+        <tr style="text-align:center">
+            <th>学号</th>
+            <th>姓名</th>
+            <th>班级</th>
+            <th>性别</th>
+            <th>语文</th>
+            <th>数学</th>
+            <th>英语</th>
+            <th>综合</th>
+            <th>操作</th>
+            <th>总分</th>
+
+
+        </tr>
+        {% for i in userlist %}
+        <tr style="text-align:center">
+            <td>{{ i.id }}</td>
+            <td>{{ i.name }}</td>
+            <td>{{ i.age }}</td>
+            <td>{{ i.sex }}</td>
+            <td>{{ i.class }}</td>
+            <td>{{ i.math }}</td>
+            <td>{{ i.english }}</td>
+            <td>{{ i.comprehensive }}</td>
+            <td><a href="/del?id={{ i.id }}">删除</a> | <a href="/cha?id={{ i.id }}">更改</a></td>
+            <td>{{ i.comprehensive+i.class+i.math+i.english }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+     <a href="/analysis">成绩分析</a>
+    </center>
+
+</body>
+</html>
