@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        p{
+            font-size: 20px;
+            color: crimson;
+        }
+        nopass{
+            color: crimson;
+        }
+        body{
+            background-image: url("/static/img/2044525.jpg");
+            background-size: 100%;
+        }
+    </style>
+</head>
+<body>
+ <center>
+        <p>数学未及格</p>
+    <table border="1px" width="500px">
+        <tr style="text-align:center">
+            <th>学号</th>
+            <th>姓名</th>
+            <th>班级</th>
+            <th>数学</th>
+        </tr>
+        {% for i in userlist %}
+        <tr style="text-align:center">
+            <td>{{ i.id }}</td>
+            <td>{{ i.name }}</td>
+            <td>{{ i.age }}</td>
+            <td>{{ i.math }}</td>
+
+        </tr>
+        {% endfor %}
+
+    </table>
+    <hr>
+    <p>语文未及格</p>
+    <table border="1px" width="500px">
+        <tr style="text-align:center">
+            <th>学号</th>
+            <th>姓名</th>
+            <th>班级</th>
+            <th>语文</th>
+        </tr>
+        {% for i in userlist2 %}
+        <tr style="text-align:center">
+            <td>{{ i.id }}</td>
+            <td>{{ i.name }}</td>
+            <td>{{ i.age }}</td>
+            <td>{{ i.class }}</td>
+
+        </tr>
+        {% endfor %}
+
+    </table>
+  <hr>
+    <p>英语未及格</p>
+    <table border="1px" width="500px">
+        <tr style="text-align:center">
+            <th>学号</th>
+            <th>姓名</th>
+            <th>班级</th>
+            <th>英语</th>
+        </tr>
+        {% for i in userlist3 %}
+        <tr style="text-align:center">
+            <td>{{ i.id }}</td>
+            <td>{{ i.name }}</td>
+            <td>{{ i.age }}</td>
+            <td>{{ i.english }}</td>
+
+        </tr>
+        {% endfor %}
+
+    </table>
+     <p>分数情况(按照班级平均分)</p>
+    <table border="1px" width="500px">
+        <tr style="text-align:center">
+            <th>数学平均分</th>
+            <th>数学及格率</th>
+            <th>数学分数情况</th>
+
+        </tr>
+        {% for i in MATH %}
+            {% for j in math1 %}
+        <tr style="text-align:center">
+            <td>{{ i.score_avg }}</td>
+            <td>{{ j.pass }}</td>
+            {% if i.score_avg<90 %}
+             <td><nopass>{{ '班级成绩非常糟糕' }}</nopass></td>
+            {% elif i.score_avg<120 %}
+              <td>{{ '班级成绩不错继续努力' }}</td>
+                 {% elif i.score_avg>=120 %}
+              <td>{{ '班级成绩优秀继续保持' }}</td>
+
+        </tr>
+                {% endif %}
+             {% endfor %}
+        {% endfor %}
+
+    </table>
+    <table border="1px" width="500px">
+        <tr style="text-align:center">
+            <th>语文平均分</th>
+            <th>语文及格率</th>
+            <th>语文分数情况</th>
+        </tr>
+        {% for i in chinese %}
+          {% for j in chinese1 %}
+        <tr style="text-align:center">
+            <td>{{ i.score_avg }}</td>
+            <td>{{ j.pass }}</td>
+            {% if i.score_avg<90 %}
+
+             <td><nopass>{{ '班级成绩非常糟糕' }}</nopass></td>
+            {% elif i.score_avg<120 %}
+              <td>{{ '班级成绩不错继续努力' }}</td>
+                 {% elif i.score_avg>=120 %}
+              <td>{{ '班级成绩优秀继续保持' }}</td>
+
+        </tr>
+              {% endif %}
+          {% endfor %}
+        {% endfor %}
+
+    </table>
+ <table border="1px" width="500px">
+        <tr style="text-align:center">
+            <th>英语平均分</th>
+            <th>英语及格率</th>
+            <th>英语分数情况</th>
+
+        </tr>
+        {% for i in english %}
+         {% for j in english1 %}
+        <tr style="text-align:center">
+            <td>{{ i.score_avg }}</td>
+            <td>{{ j.pass }}</td>
+        {% if i.score_avg<90 %}
+             <td><nopass>{{ '班级成绩非常糟糕' }}</nopass></td>
+            {% elif i.score_avg<120 %}
+              <td>{{ '班级成绩不错继续努力' }}</td>
+                 {% elif i.score_avg>=120 %}
+              <td>{{ '班级成绩优秀继续保持' }}</td>
+
+        </tr>
+             {% endif %}
+         {% endfor %}
+        {% endfor %}
+
+    </table>
+
+    </center>
+
+</body>
+</html>
