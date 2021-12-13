@@ -58,7 +58,14 @@ def ad():
 def adds():
     data = dict (request.form)
     print (data)
-    sql = "insert into nico values ('{id}','{name}','{age}','{sex}','{class}','{math}','{english}','{comprehensive}')".format (**data)
+
+    sqlQuery = "SELECT id FROM nico"
+    lens = len(func(sqlQuery,m='r'))+1
+    data['id']=str(lens)
+    print(data)
+    
+    sql = "insert into nico values ('{id}','{class}','{name}','{content}','{proof}','{number}','{done}')".format (**data)
+    #sql = "insert into nico values ('3','{class}','{name}','{content}','{proof}','{number}','{done}')".format (**data)
     res = func (sql,m='w')
     if res:
         return '<script>alert("添加成功");location.href="/";</script>'

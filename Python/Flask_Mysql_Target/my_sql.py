@@ -12,21 +12,32 @@ try:
     print('连接成功')
     #创建游标
     cur = db.cursor()
-    #创建表之前先检查是否存在，如果存在则删除
-    cur.execute('DROP TABLE IF EXISTS nico')
 
-    #SQL语句
-    #sqlQuery = "CREATE TABLE nico(Name CHAR(20) NOT NULL ,Email CHAR(20),Age int )"
-    sqlQuery = "CREATE TABLE nico(id int ,class CHAR(20), name CHAR(20) NOT NULL, content CHAR(20), proof char(20), number int, done char(20))"
-    cur.execute(sqlQuery)       
-    sqlQuery=" INSERT INTO nico (id, class, name, content, proof, number, done) VALUE (%s,%s,%s,%s,%s,%s,%s) "
-    value=(1,'调试','张三','调试模块','调试记录手册',5,'完成')
-    cur.execute(sqlQuery,value)
-    db.commit()
-    sqlQuery=" INSERT INTO nico (id, class, name, content, proof, number, done) VALUE (%s,%s,%s,%s,%s,%s,%s) "
-    value=(2,'开发','张三','硬件开发','开发手册',2,'未完成')
-    cur.execute(sqlQuery,value)
-    db.commit()
+    # #创建表之前先检查是否存在，如果存在则删除
+    # cur.execute('DROP TABLE IF EXISTS nico')
+
+    # #SQL语句
+    # #sqlQuery = "CREATE TABLE nico(Name CHAR(20) NOT NULL ,Email CHAR(20),Age int )"
+    # sqlQuery = "CREATE TABLE nico(id int ,class CHAR(20), name CHAR(20) NOT NULL, content CHAR(20), proof char(20), number int, done char(20))"
+    # cur.execute(sqlQuery)       
+    # sqlQuery=" INSERT INTO nico (id, class, name, content, proof, number, done) VALUE (%s,%s,%s,%s,%s,%s,%s) "
+    # value=(1,'调试','张三','调试模块','调试记录手册',5,'完成')
+    # cur.execute(sqlQuery,value)
+    # db.commit()
+    # sqlQuery=" INSERT INTO nico (id, class, name, content, proof, number, done) VALUE (%s,%s,%s,%s,%s,%s,%s) "
+    # value=(2,'开发','张三','硬件开发','开发手册',2,'未完成')
+    # cur.execute(sqlQuery,value)
+    # db.commit()
+
+    sqlQuery = "SELECT id FROM nico"
+    try:
+        cur.execute(sqlQuery)
+        results=cur.fetchall()
+        print(len(results))
+        for row in results:
+            print(row)
+    except pymysql.Error as e:
+        print("数据查询失败："+str(e))    
 except pymysql.Error as e:
     print(e)
 
@@ -58,6 +69,7 @@ def update():
 def get():
     #查询表中数据
     sqlQuery = "SELECT * FROM nico"
+    #sqlQuery = "SELECT Email,Agez FROM nico WHERE Name=%s"
     try:
         cur.execute(sqlQuery)
         results=cur.fetchall()
@@ -88,17 +100,3 @@ def deletetable():
     cur.execute(sqlQuery)
     print('表删除成功!')  
 
-
-# insert('Mike3','123456@163.com',20)
-
-# insert('Mike4','123456@163.com',20)
-
-# insert('Mike','123456@163.com',20)
-
-# get()
-
-# sql = "select * from nico"
-# cur.execute(sql)
-# content = cur.fetchall()
-# print(type(content))
-# print(content)
