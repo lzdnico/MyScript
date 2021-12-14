@@ -13,34 +13,32 @@ try:
     #创建游标
     cur = db.cursor()
 
-    # #创建表之前先检查是否存在，如果存在则删除
-    # cur.execute('DROP TABLE IF EXISTS nico')
-
-    # #SQL语句
-    # #sqlQuery = "CREATE TABLE nico(Name CHAR(20) NOT NULL ,Email CHAR(20),Age int )"
-    # sqlQuery = "CREATE TABLE nico(id int ,class CHAR(20), name CHAR(20) NOT NULL, content CHAR(20), proof char(20), number int, done char(20))"
-    # cur.execute(sqlQuery)       
-    # sqlQuery=" INSERT INTO nico (id, class, name, content, proof, number, done) VALUE (%s,%s,%s,%s,%s,%s,%s) "
-    # value=(1,'调试','张三','调试模块','调试记录手册',5,'完成')
-    # cur.execute(sqlQuery,value)
-    # db.commit()
-    # sqlQuery=" INSERT INTO nico (id, class, name, content, proof, number, done) VALUE (%s,%s,%s,%s,%s,%s,%s) "
-    # value=(2,'开发','张三','硬件开发','开发手册',2,'未完成')
-    # cur.execute(sqlQuery,value)
-    # db.commit()
-
-    sqlQuery = "SELECT id FROM nico"
-    try:
-        cur.execute(sqlQuery)
-        results=cur.fetchall()
-        print(len(results))
-        for row in results:
-            print(row)
-    except pymysql.Error as e:
-        print("数据查询失败："+str(e))    
 except pymysql.Error as e:
     print(e)
 
+def init():
+    #创建表之前先检查是否存在，如果存在则删除
+    cur.execute('DROP TABLE IF EXISTS nico')
+    #SQL语句
+    #sqlQuery = "CREATE TABLE nico(Name CHAR(20) NOT NULL ,Email CHAR(20),Age int )"
+    sqlQuery = "CREATE TABLE nico(id int,class CHAR(20), name CHAR(20) NOT NULL, content CHAR(20), proof char(20), number int, done char(20))"
+    cur.execute(sqlQuery)       
+    for i in range(100):     
+        sqlQuery=" INSERT INTO nico (id,class, name, content, proof, number, done) VALUE (%s,%s,%s,%s,%s,%s,%s) "
+        value=(i+1,'调试','张三'+str(i),'调试模块'+str(i),'调试记录手册',1,'完成')
+        cur.execute(sqlQuery,value)
+        db.commit()
+        print('done:'+str(i))
+
+    # sqlQuery = "SELECT id FROM nico"
+    # try:
+    #     cur.execute(sqlQuery)
+    #     results=cur.fetchall()
+    #     print(len(results))
+    #     for row in results:
+    #         print(row)
+    # except pymysql.Error as e:
+    #     print("数据查询失败："+str(e))    
 
 def insert(Name,Email,Age):
     sqlQuery=" INSERT INTO nico (Name, Email, Age) VALUE (%s,%s,%s) "
@@ -83,8 +81,8 @@ def get():
 
 def delete():
     #删除表中的数据
-    sqlQuery = "DELETE FROM nico where Name=%s"
-    value = ('John')
+    sqlQuery = "DELETE FROM nico where content=%s"
+    value = ('硬件开发')
     try:
         cur.execute(sqlQuery, value)
         db.commit()
@@ -100,3 +98,5 @@ def deletetable():
     cur.execute(sqlQuery)
     print('表删除成功!')  
 
+
+init()

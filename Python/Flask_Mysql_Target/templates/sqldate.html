@@ -6,7 +6,7 @@
     <style type="text/css">
         .one{
             width: auto;
-            height: 120px;
+            height: 50px;
             text-align: center;
         }
         body{
@@ -19,14 +19,16 @@
 <body>
     <center>
     <div class="one">
-        <h1>成绩管理系统</h1>
-        <a href="/add/">添加学生信息</a>
+        <h1>数据管理系统</h1>
     </div>
+    <!-- <hr>
     <hr>
+    <br> -->
 
     <table border="1px" width="500px">
         <tr style="text-align:center">
-            <th>编号</th>
+            <th>编号</th>            
+            <th>标识</th>
             <th>子类</th>
             <th>姓名</th>
             <th>内容</th>
@@ -36,6 +38,7 @@
         </tr>
         {% for i in userlist %}
         <tr style="text-align:center">
+            <td>{{ i.i }}</td>
             <td>{{ i.id }}</td>
             <td>{{ i.class }}</td>
             <td>{{ i.name }}</td>
@@ -49,8 +52,7 @@
         {% endfor %}
 
     </table>
-     <a href="/analysis">成绩分析</a>
-    </center>
+    <a href="/add/">添加数据</a> <a href="/analysis">生成EXCEL
 
 </body>
 </html>

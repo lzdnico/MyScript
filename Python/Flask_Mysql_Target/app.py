@@ -19,7 +19,9 @@ def func(sql,m='r'):#连接本地mysql数据库 端口号      用户名        
         elif m == 'w':
             py.commit ()
             data = cursor.rowcount
-    except:
+            print(data)
+    except Exception as e:
+        print(e)
         data = False
         py.rollback ()
     py.close ()
@@ -30,6 +32,11 @@ def func(sql,m='r'):#连接本地mysql数据库 端口号      用户名        
 @app.route ('/')
 def index():
     data = func('select * from nico')
+    n = 1
+    for i in data:
+        i['i']=n
+        n = n+1
+    #print(data)
     return render_template('sqldate.html',userlist=data)
 
 @app.route("/analysis/")
@@ -57,15 +64,9 @@ def ad():
 @app.route ("/adds/",methods=["POST"])  # 注意post大写,因为post是通过form.data传数据所以下面用request.form
 def adds():
     data = dict (request.form)
-    print (data)
-
-    sqlQuery = "SELECT id FROM nico"
-    lens = len(func(sqlQuery,m='r'))+1
-    data['id']=str(lens)
-    print(data)
-    
+    #sqlQuery = "SELECT id FROM nico"
+    #lens = len(func(sqlQuery,m='r'))+1
     sql = "insert into nico values ('{id}','{class}','{name}','{content}','{proof}','{number}','{done}')".format (**data)
-    #sql = "insert into nico values ('3','{class}','{name}','{content}','{proof}','{number}','{done}')".format (**data)
     res = func (sql,m='w')
     if res:
         return '<script>alert("添加成功");location.href="/";</script>'
@@ -85,7 +86,8 @@ def ch():
 @app.route ('/chas/',methods=["POST"])
 def chas():
     data = dict (request.form)
-    res = func ("update nico set name='{name}',age='{age}',sex='{sex}',class='{banji}',math='{math}',english='{english}',comprehensive='{comprehensive}' where id={id}".format (**data),
+    #print(data)
+    res = func ("update nico set id='{id}', class='{class}',name='{name}',content='{content}',proof='{proof}',number='{number}',done='{done}' where id={id}".format (**data),
                 m='w')
     if res:
         return '<script>alert("更新成功");location.href="/";</script>'
@@ -96,6 +98,22 @@ def chas():
 # 删除数据----删
 @app.route ('/del')
 def de():
+    # content = request.args.get ('content')
+    # print(content)
+    # py = pymysql.connect(host='127.0.0.1', user='root',password="X8>yt.cu3clt", database='dbtest', charset="utf8", cursorclass=pymysql.cursors.DictCursor)
+    # cursor = py.cursor()
+    # sqlQuery = "DELETE FROM nico where content=%s"
+    # value = (content)
+    # try:
+    #     cursor.execute(sqlQuery, value)
+    #     py.commit()
+    #     print('Date Deleted Successfully')
+    #     return '<script>alert("删除成功");location.href="/";</script>'
+    # except pymysql.Error as e:
+    #     print("数据删除失败："+str(e))
+    #     # 发生错误时回滚
+    #     py.rollback()   
+    #     return '<script>alert("删除失败");location.href="/";</script>'
     id = request.args.get ('id')
     res = func (f'delete from nico where id={id}',m='w')
     if res:
@@ -106,4 +124,4 @@ def de():
 
 # 运行
 if __name__ == '__main__':
-    app.run (debug=True,host='127.0.0.1',port='8080')
+    app.run (debug=False,host='127.0.0.1',port='8080')

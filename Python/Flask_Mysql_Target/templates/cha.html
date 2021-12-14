@@ -11,28 +11,25 @@
         <table>
             {% for i in userlist %}
             <tr>
-                <td>学号:<input type="text" name="id" readonly="readonly" value="{{ i.id }}"><br></td>
+                <td>标识:<input type="text" name="id" readonly="readonly" value="{{ i.id }}"><br></td>
+            </tr>
+            <tr>
+                <td>子类:<input type="text" name="class" value="{{ i.class }}"><br></td>
             </tr>
             <tr>
                 <td>姓名:<input type="text" name="name" value="{{ i.name }}"><br></td>
             </tr>
             <tr>
-                <td>班级:<input type="text" name="age" value="{{ i.age }}"><br></td>
+                <td>内容:<input type="text" name="content" value="{{ i.content }}"><br></td>
             </tr>
             <tr>
-                <td>性别:<input type="text" name="sex" value="{{ i.sex }}"><br></td>
-            </tr>
-            <tr>
-                <td>语文:<input type="text" name="banji" value="{{ i.class }}"><br></td>
+                <td>举证:<input type="text" name="proof" value="{{ i.proof }}"><br></td>
             </tr>
                 <tr>
-                <td>数学:<input type="text" name="math" value="{{ i.math }}"><br></td>
+                <td>数量:<input type="text" name="number" value="{{ i.number }}"><br></td>
             </tr>
                 <tr>
-                <td>外语:<input type="text" name="english" value="{{ i.english }}"><br></td>
-            </tr>
-                <tr>
-                <td>综合:<input type="text" name="comprehensive" value="{{ i.comprehensive }}"><br></td>
+                <td>完成:<input type="text" name="done" value="{{ i.done }}"><br></td>
             </tr>
             {% endfor %}
             <tr>
